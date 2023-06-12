@@ -1,16 +1,23 @@
 
+/* Global styling applied to the site */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
-  
+ 
+  :root {
+    /* declare a variable with `--` syntax */
+    --content-color: white;
+    --image-border-color: rgb(192, 1, 1);
+  }
 
   body {
     font-family: Helvetica, Arial, sans-serif;
   }
   
-
+ /* CSS styling applied to all header elements of the site */
   header {
     padding: 20px 35px;
     background-color: #a5a7ae;
@@ -27,13 +34,13 @@
     display: flex;
     margin: 0;
     font-size: 36px;
-    color: white;
+    color: var(--content-color);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   header a {
     text-decoration: none;
-    color: white;
+    color: var(--content-color);
   }
   
   header nav {
@@ -55,14 +62,15 @@
     text-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
     text-decoration: underline;
   }
-  
+
+  /* Added hover pseudo element to allow for site viewer to select nav link to navigate to */
   header nav ul li a:hover {
-    color: darkred;
+    color: rgb(144, 4, 4);
     border-radius: 15px;
     text-shadow: none;
   }
   
-
+/* Footer styling for the content */
   footer {
     padding: 30px;
     clear: both;
@@ -108,7 +116,7 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     font-size: 25px;
-    color: white;
+    color: var(--content-color);
     margin: 0 auto 0 auto;
     padding-right: 20px;
     width: 10%;
@@ -122,7 +130,7 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     font-size: 25px;
-    color: white;
+    color: var(--content-color);
     margin: 0 auto 0 auto;
     padding-right: 15px;
     width: 10%;
@@ -139,7 +147,7 @@
     margin: 0 auto 0 auto;
     width: 90%;
   }
-  
+  /* Styling for the Contact section of the page */
   .contact-section {
     display: flex;
     flex-wrap: wrap;
@@ -160,11 +168,12 @@
     min-width: 130px;
   }
   
+  /* Applied styling for paragraphs and link elements of the sections */
   .section p,
   .section a {
     flex-wrap: wrap;
     line-height: 1.5;
-    color: white;
+    color: var(--content-color);
     width: 80%;
     /* margin: 0 auto; */
     font-size: 25px;
@@ -247,7 +256,7 @@
     width: 90%;
     height: 600px;
     margin-bottom: 2%;
-    border: rgb(168, 3, 3) 5px solid;
+    border: var(--image-border-color) 5px solid;
     position: relative;
   }
 
@@ -269,7 +278,7 @@
     width: 47%;
     height: 220px;
     margin-bottom: 2%;
-    border: rgb(168, 3, 3) 5px solid;
+    border: var(--image-border-color) 5px solid;
     position: relative;
   }
 
@@ -289,6 +298,10 @@
     
   }
   
+
+  /* The below syntax depics styling applied to the site to be 
+  adaptable to the different devices and screen layouts */
+
   @media screen and (max-width: 980px) {
     header {
       padding-bottom: 0;
@@ -316,11 +329,6 @@
       width: 100%;
     }
   
-   /* .work-left-heading {
-      width: 20%;
-    }
-  }  */
-  
   @media screen and (max-width: 768px) {
     section, 
     .my-projects,
@@ -332,14 +340,4 @@
       width: 100%;
     }
   }
-  
-  /* @media screen and (max-width: 575px) {
-    .left-side-content {
-      width: 95%;
-    }
-  
-    .section p {
-      width: 100%;
-    }
-  } */
   
